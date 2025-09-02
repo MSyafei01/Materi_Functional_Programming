@@ -251,7 +251,9 @@ Kedua: jalankan square(2) → hasilnya 2 * 2 = 4.
 contoh di atas menunjukkan bahwa compose adalah HOF yang menggabungkan dua fungsi menjadi satu 
 fungsi baru yang menjalankan g terlebih dahulu dan kemudian f.
 
-
+Fungsi Array.map menerima sebuah fungsi sebagai argumen yang digunakan untuk memproses setiap elemen array.
+ Fungsi Array.map mengembalikan array baru yang hasilnya adalah nilai dari pemanggilan
+  fungsi pada setiap elemen array asli.
 
 
 
