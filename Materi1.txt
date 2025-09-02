@@ -248,7 +248,6 @@ Pertama: jalankan addOne(1) → hasilnya 1 + 1 = 2.
 Kedua: jalankan square(2) → hasilnya 2 * 2 = 4.
 
 
-
 contoh di atas menunjukkan bahwa compose adalah HOF yang menggabungkan dua fungsi menjadi satu 
 fungsi baru yang menjalankan g terlebih dahulu dan kemudian f.
 
