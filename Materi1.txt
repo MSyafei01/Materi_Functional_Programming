@@ -256,24 +256,106 @@ Fungsi Array.map menerima sebuah fungsi sebagai argumen yang digunakan untuk mem
   fungsi pada setiap elemen array asli.
 
 
+Fungsi yang Mengubah Data (Mutator Function)
+1. Array.push: menambahkan elemen di akhir dari sebuah array.
+2. Array.pop: menghapus elemen terakhir dari sebuah array.
+3. Array.shift: menghapus elemen pertama dari sebuah array.
+4. Array.unshift: menambahkan elemen di awal dari sebuah array.
+5. Array.splice: menambahkan atau menghapus elemen di posisi tertentu dari sebuah array.
+6. Array.reverse: membalikkan urutan elemen dari sebuah array.
+7. Array.sort: mengurutkan elemen dari sebuah array.
+8. Object.assign: memodifikasi properti dari object.
+
+
+--------------------------------------------------------------------------------------------
+function max(arrayOfNumbers) {
+  return arrayOfNumbers
+    .sort((a, b) => a - b)
+    .pop();
+}
+
+const numbers = [10, 23, 24, 7, 42, 18];
+const largest = max(numbers);
+
+console.log(largest); // Output: 42
+console.log(numbers); // Output: [ 7, 10, 18, 23, 24 ]
+
+--------------------------------------------------------------------------------------------
+Fungsi max adalah fungsi yang mengembalikan elemen bernilai terbesar dari array yang dikirimkan melalui argumen.
+Namun, karena dalam implementasinya kita menggunakan fungsi sort dan pop, fungsi max jadi memiliki efek samping, 
+yaitu mengubah nilai array numbers yang diberikan melalui argumen.
+
+--------------------------------------------------------------------------------------------
+function registerEmail(person, email) {
+  return Object.assign(person, { email });
+}
+
+const person = {
+  name: 'John',
+  username: 'johndoe',
+};
+
+const personWithEmail = registerEmail(person, 'john@dicoding.com');
+
+console.log(person); // Output: { name: 'John', username: 'johndoe', email: 'john@dicoding.com' }
+console.log(personWithEmail); // Output: { name: 'John', username: 'johndoe', email: 'john@dicoding.com' }
+--------------------------------------------------------------------------------------------
+Anda bisa lihat bahwa fungsi registerEmail menambahkan properti email, baik pada personWithEmail maupun person.
+
+
+Array Map
+Fungsi Array.map() adalah bawaan dari array yang sangat berguna dan banyak sekali digunakan. 
+Fungsi ini dapat dipanggil dari sebuah data bertipe array dan menerima satu buah callback function.
+
+Callback function tersebut akan dipanggil sebanyak jumlah panjang array dan akan memiliki akses pada index 
+array sesuai dengan iterasinya.
+
+
+Fungsi map akan mengembalikan array baru. Nilai tiap item pada array yang dikembalikan dihasilkan dari 
+kembalian callback function-nya.
+
+Array Filter
+Fungsi ini sangat berguna untuk melakukan proses penyaringan (filtering) terhadap nilai array yang ada. 
+Bila Anda memiliki kasus ingin menghilangkan beberapa item dalam array berdasarkan spesifikasi tertentu, 
+fungsi ini sangatlah cocok digunakan.
+    Cara kerja fungsi ini mirip seperti Array.map(). Namun, callback function dari fungsi ini harus mengembalikan
+    boolean. 
+        Sama seperti fungsi map(), fungsi filter() juga akan mengembalikan array yang telah disaring dalam 
+        bentuk array baru.
+
+--------------------------------------------------------------------------------------------
+const truthyArray = [1, '', 'Halo', 0, null, 'Syabaqi', 14]
+    .filter((item) => Boolean(item));
+
+console.log(truthyArray); // Output: [ 1, 'Halo', 'Harry', 14 ]
 
 
 
+const students = [
+    {
+    name: 'Baqi',
+    score: 60,
+    },
+    {
+    name: 'Syabaqi',
+    score: 88,
+    },
+    {
+    name: 'qi',
+    score: 90,
+    },
+    {
+    name: 'bayan',
+    score: 75,
+    }
+];
+
+const eligibleForScholarshipStudents = students.filter((student) => student.score > 85);
+
+console.log(eligibleForScholarshipStudents);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+--------------------------------------------------------------------------------------------
 
 
 
