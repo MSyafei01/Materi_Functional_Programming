@@ -222,9 +222,34 @@ function compose(f, g) {
 
 const addOneAndSquare = compose(square, addOne);
 
-console.log(addOneAndSquare(2)); // output: 9
+console.log(addOneAndSquare(1)); // output: 4
 --------------------------------------------------------------------------------------------
-ontoh di atas menunjukkan bahwa compose adalah HOF yang menggabungkan dua fungsi menjadi satu 
+
+Alur eksekusinya:
+
+Fungsi compose(f, g)
+
+Mengembalikan fungsi baru (x) => f(g(x)).
+
+Artinya: kita masukkan x, lalu pertama dijalankan g(x), hasilnya kemudian dimasukkan ke f(...).
+
+Jadi urutannya: compose(f, g)(x) = f(g(x)).
+
+Deklarasi const addOneAndSquare = compose(square, addOne);
+
+Di sini f = square dan g = addOne.
+
+Maka: addOneAndSquare(x) = square(addOne(x)).
+
+Eksekusi addOneAndSquare(1)
+
+Pertama: jalankan addOne(1) → hasilnya 1 + 1 = 2.
+
+Kedua: jalankan square(2) → hasilnya 2 * 2 = 4.
+
+
+
+contoh di atas menunjukkan bahwa compose adalah HOF yang menggabungkan dua fungsi menjadi satu 
 fungsi baru yang menjalankan g terlebih dahulu dan kemudian f.
 
 
